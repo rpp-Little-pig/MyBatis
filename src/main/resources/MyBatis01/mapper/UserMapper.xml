@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+namespace: 名称标签
+-->
+<!--<mapper namespace="test">-->
+<!--    <select nam="selectAll" resultType="MyBatis.User">-->
+<!--        select * from b;-->
+<!--    </select>-->
+<!--</mapper>-->
+<mapper namespace="MyBatis01.mapper.UserMapper">
+<!--    <select id="selectAll" resultType="MyBatis01.pojo.User">-->
+<!--        select * from b-->
+<!--    </select>-->
+
+<!--    <select id="selectById" resultType="user">-->
+<!--        select * from b where age = #{age};-->
+<!--    </select>-->
+
+<!--    <select id="select" resultType="MyBatis01.pojo.User">-->
+
+<!--    </select>-->
+</mapper>

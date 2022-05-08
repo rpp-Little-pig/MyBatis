@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+namespace: 名称标签
+-->
+<!--<mapper namespace="test">-->
+<!--    <select nam="selectAll" resultType="MyBatis.User">-->
+<!--        select * from b;-->
+<!--    </select>-->
+<!--</mapper>-->
+<!--MyBatis02/mapper/BrandMapper.java-->
+<mapper namespace="MyBatis02.mapper.BrandMapper">
+    <select id="selectAll" resultType="brand">
+        select * from Brand;
+    </select>
+    
+    
+    <resultMap id="brandResultMap" type="brand">
+        <result column="brandName" property="brandNanme"/>
+    </resultMap>
+<!--    参数占位符
+            1,#{}:传递参数
+            2,${}:表名or列名
+
+parameterType:参数类型可以省略
+特殊字符:
+1,转义字符:
+
+2,CDATA区:
+
+-->
+<!--    <select id="selectById" resultMap="brandResultMap">-->
+<!--        select * from Brand where id = #{id};-->
+<!--    </select>-->
+
+    <select id="selectById" resultMap="brandResultMap">
+        select * from Brand where id
+        <![CDATA[
+            <
+        ]]>
+        #{id};
+    </select>
+
+<!--    条件查询 -->
+    <select id="selectByCondition" resultMap="brandResultMap">
+        select * from Brand where
+            status = #{status}
+            and companyName like #{companyName}
+            and brandName like #{brandNanme}
+    </select>
+
+</mapper>

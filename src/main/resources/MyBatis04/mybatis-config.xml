@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <typeAliases>
+        <package name="MyBatis05.pojo"/>
+    </typeAliases>
+
+    <!-- 对事务的管理和连接池的配置 -->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver" />
+                <property name="url" value="jdbc:mysql://192.168.30.111:3306/a?useSSL=false&amp;
+                serverTimezone=Hongkong&amp; characterEncoding=utf-8&amp; autoReconnect=true"/>
+
+                <property name="username" value="root" />
+                <property name="password" value="root" />
+            </dataSource>
+        </environment>
+
+
+
+
+    </environments>
+    <!-- mapping 文件路径配置 -->
+    <mappers>
+<!--        <mapper resource="mapper/UserMapper.xml" />-->
+<!--        <mapper resource="UserMapper.xml" />&ndash;&gt;-->
+        <package name="MyBatis05/mapper"/>
+    </mappers>
+</configuration>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+namespace: 名称标签
+-->
+<!--<mapper namespace="test">-->
+<!--    <select nam="selectAll" resultType="MyBatis.User">-->
+<!--        select * from b;-->
+<!--    </select>-->
+<!--</mapper>-->
+<!--MyBatis03/mapper/BrandMapper.java-->
+<mapper namespace="MyBatis04.mapper.BrandMapper">
+
+
+    <resultMap id="brandResultMap" type="brand">
+        <result column="brandName" property="brandNanme"/>
+    </resultMap>
+
+    <insert id="add" useGeneratedKeys="true" keyProperty="id">
+        insert into Brand (brandName,companyName,status)
+        values(#{brandNanme},#{companyName},#{status});
+    </insert>
+    <update id="updata">
+        update Brand
+        set
+            brandName = #{brandNanme},
+            companyName = #{companyName},
+            status = #{status}
+        where id = #{id} ;
+    </update>
+
+
+</mapper>
